@@ -175,8 +175,10 @@ public final class HighingRefreshListView extends ListView implements
 				onRefresh();// 触发刷新事件
 				mIsGoingtoRefresh = false;
 
-			} else {
-				Hidereset();
+			} else{ 
+				if (!isInFrefresh) {
+					Hidereset();	
+				}
 			}
 			break;
 		default:
@@ -192,7 +194,7 @@ public final class HighingRefreshListView extends ListView implements
 		headerView.setPadding(0, 50, 0, 0);
 		headerView.setLayoutParams(params);
 
-		ishasrefresh = true;
+		ishasrefresh = false;
 
 		// 复位后修复waterView的参�?		
 		LinearLayout.LayoutParams params2 = new LinearLayout.LayoutParams(45, 0);
@@ -210,7 +212,7 @@ public final class HighingRefreshListView extends ListView implements
 		headerView.setPadding(0, 240, 0, 0);
 		headerView.setLayoutParams(params);
 
-		ishasrefresh = true;
+		ishasrefresh = false;
 
 		// 复位后修复waterView的参�?		
 		LinearLayout.LayoutParams params2 = new LinearLayout.LayoutParams(45,
